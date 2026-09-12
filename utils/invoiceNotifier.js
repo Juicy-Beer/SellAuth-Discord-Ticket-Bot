@@ -39,8 +39,8 @@ const formatGatewayInfo = (invoice) => {
 };
 
 async function checkCompletedInvoices() {
-  if (!process.env.RESTOCK_WEBHOOK_URL) return;
-  const pingRoleId = process.env.RESTOCK_ROLE_ID;
+  if (!process.env.INVOICE_NOTIFIER_DISCORD_WEBHOOK_URL) return;
+  const pingRoleId = process.env.INVOICE_NOTIFIER_ROLE_ID;
 
   try {
     const response = await axios.get(
@@ -84,7 +84,7 @@ async function checkCompletedInvoices() {
           payload.content = `<@&${pingRoleId}>`;
         }
 
-        const webhookClient = new WebhookClient({ url: process.env.RESTOCK_WEBHOOK_URL });
+        const webhookClient = new WebhookClient({ url: process.env.INVOICE_NOTIFIER_DISCORD_WEBHOOK_URL });
         await webhookClient.send(payload).catch(() => {});
       }
     }
