@@ -1,7 +1,7 @@
 {
-  "name": "SellAuth Bot For Discord & QoL",
+  "name": "sellauth-discord-ticket-bot",
   "version": "1.0.0",
-  "description": "Discord ticket support bot with SellAuth integration",
+  "description": "Discord bot for SellAuth store owners with tickets, restock notifications, invoice alerts, shop stats and more",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
